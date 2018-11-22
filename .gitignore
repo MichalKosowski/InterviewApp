@@ -1,0 +1,8 @@
+
+.vs/InterviewApp/v15/.suo
+
+InterviewApp.Tests/bin/*
+InterviewApp.Tests/obj/*
+InterviewApp/bin/*
+InterviewApp/obj/*
+.vs/*
