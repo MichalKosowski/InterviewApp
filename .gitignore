@@ -1,8 +1,10 @@
-
-.vs/InterviewApp/v15/.suo
-
 InterviewApp.Tests/bin/*
 InterviewApp.Tests/obj/*
 InterviewApp/bin/*
 InterviewApp/obj/*
-.vs/*
+.vs/InterviewApp/DesignTimeBuild/.dtbcache
+.vs/InterviewApp/v15/.suo
+.vs/InterviewApp/v15/Server/sqlite3/db.lock
+.vs/InterviewApp/v15/Server/sqlite3/storage.ide
+.vs/InterviewApp/v15/Server/sqlite3/storage.ide-shm
+.vs/InterviewApp/v15/Server/sqlite3/storage.ide-wal
