@@ -28,8 +28,8 @@ namespace InterviewApp.Controllers
             return await _repository.GetAllAsync();
         }
 
-        [HttpGet("{id}", Name = "GetProduct")]
-        public async Task<ActionResult<Product>> GetById(long id)
+        [HttpGet("{productId}", Name = "GetProduct")]
+        public async Task<ActionResult<Product>> GetById([FromQuery]long id)
         {
             var product = await _repository.GetByIdAsync(id);
             if(product == null)
@@ -40,15 +40,15 @@ namespace InterviewApp.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(Product product)
+        public async Task<IActionResult> Create([FromBody]Product product)
         {
             await _repository.AddNewAsync(product);
 
             return CreatedAtRoute("GetProduct", new { id = product.Id }, product);
         }
 
-        [HttpPut("{id}")]
-        public async Task<IActionResult> Update(long id, Product item)
+        [HttpPut("{productId}")]
+        public async Task<IActionResult> Update(long id, [FromBody]Product item)
         {
             var product = await _repository.GetByIdAsync(id);
             if (product == null)
@@ -63,7 +63,7 @@ namespace InterviewApp.Controllers
             return NoContent();
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("{productId}")]
         public async Task<IActionResult> Delete(long id)
         {
             var product = await _repository.GetByIdAsync(id);

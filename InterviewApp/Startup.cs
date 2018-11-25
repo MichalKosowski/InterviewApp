@@ -15,6 +15,7 @@ using Microsoft.Extensions.Options;
 using InterviewApp.Core;
 using InterviewApp.Models;
 
+
 namespace InterviewApp
 {
     public class Startup
@@ -32,6 +33,7 @@ namespace InterviewApp
             services.AddDbContext<ProductsContext>(opt => opt.UseInMemoryDatabase("ProductsList"));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddScoped<IProductsRepository, EntityFrameworkProductsRepository>();
+            services.AddSwaggerGen(c => c.SwaggerDoc("v1", new Swashbuckle.AspNetCore.Swagger.Info { Title = "Products API", Version = "v1" }));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -55,6 +57,11 @@ namespace InterviewApp
 
             app.UseHttpsRedirection();
             app.UseMvc();
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Products API V1");
+            });
         }
 
         private async Task InitializeDatabaseAsync(IProductsRepository repository)
