@@ -33,8 +33,9 @@ namespace InterviewApp
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            if (env.IsDevelopment())
-            {
+            // Michal K: temporary for Azure deployment quick testing
+            //if (env.IsDevelopment())
+            //{
                 app.UseDeveloperExceptionPage();
 
                 // Michal K: don't like this, I read that now should go to program.cs, however leaved here for this project.
@@ -43,8 +44,8 @@ namespace InterviewApp
                     var repository = scope.ServiceProvider.GetService<IProductsRepository>();
                     InitializeDatabaseAsync(repository).Wait();
                 }
-            }
-            else
+            //}
+            if (!env.IsDevelopment())
             {
                 app.UseHsts();
             }

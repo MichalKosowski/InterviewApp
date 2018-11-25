@@ -3,3 +3,5 @@ InterviewApp.Tests/obj/*
 InterviewApp/bin/*
 InterviewApp/obj/*
 .vs/*
+/InterviewApp/InterviewApp.csproj.user
+*.user
