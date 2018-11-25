@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using InterviewApp.Core;
-using InterviewApp.DataAccess;
 using InterviewApp.Models;
 using Microsoft.AspNetCore.Mvc;
 
